@@ -1,0 +1,119 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files (x86)\\nodejs\\\\node.exe',
+1 verbose cli   'C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   '–save',
+1 verbose cli   '–dev',
+1 verbose cli   'gulp-jshing',
+1 verbose cli   'gulp-jscs',
+1 verbose cli   'jshing-stylish' ]
+2 info using npm@2.7.4
+3 info using node@v0.12.2
+4 verbose node symlink C:\Program Files (x86)\nodejs\\node.exe
+5 warn package.json library@1.0.0 No description
+6 warn package.json library@1.0.0 No README data
+7 silly cache add args [ '–save', null ]
+8 verbose cache add spec –save
+9 silly cache add args [ '–dev', null ]
+10 verbose cache add spec –dev
+11 silly cache add args [ 'gulp-jshing', null ]
+12 verbose cache add spec gulp-jshing
+13 silly cache add args [ 'gulp-jscs', null ]
+14 verbose cache add spec gulp-jscs
+15 silly cache add args [ 'jshing-stylish', null ]
+16 verbose cache add spec jshing-stylish
+17 silly cache add parsed spec { raw: '–save',
+17 silly cache add   scope: null,
+17 silly cache add   name: null,
+17 silly cache add   rawSpec: '–save',
+17 silly cache add   spec: 'C:\\Repositories\\NodeJs\\NodeBasic\\–save',
+17 silly cache add   type: 'local' }
+18 silly cache add parsed spec { raw: '–dev',
+18 silly cache add   scope: null,
+18 silly cache add   name: null,
+18 silly cache add   rawSpec: '–dev',
+18 silly cache add   spec: 'C:\\Repositories\\NodeJs\\NodeBasic\\–dev',
+18 silly cache add   type: 'local' }
+19 silly cache add parsed spec { raw: 'gulp-jshing',
+19 silly cache add   scope: null,
+19 silly cache add   name: 'gulp-jshing',
+19 silly cache add   rawSpec: '',
+19 silly cache add   spec: '*',
+19 silly cache add   type: 'range' }
+20 verbose addNamed gulp-jshing@*
+21 silly addNamed semver.valid null
+22 silly addNamed semver.validRange *
+23 silly addNameRange { name: 'gulp-jshing', range: '*', hasData: false }
+24 silly mapToRegistry name gulp-jshing
+25 silly mapToRegistry using default registry
+26 silly mapToRegistry registry https://registry.npmjs.org/
+27 silly mapToRegistry uri https://registry.npmjs.org/gulp-jshing
+28 verbose addNameRange registry:https://registry.npmjs.org/gulp-jshing not in flight; fetching
+29 silly cache add parsed spec { raw: 'gulp-jscs',
+29 silly cache add   scope: null,
+29 silly cache add   name: 'gulp-jscs',
+29 silly cache add   rawSpec: '',
+29 silly cache add   spec: '*',
+29 silly cache add   type: 'range' }
+30 verbose addNamed gulp-jscs@*
+31 silly addNamed semver.valid null
+32 silly addNamed semver.validRange *
+33 silly addNameRange { name: 'gulp-jscs', range: '*', hasData: false }
+34 silly mapToRegistry name gulp-jscs
+35 silly mapToRegistry using default registry
+36 silly mapToRegistry registry https://registry.npmjs.org/
+37 silly mapToRegistry uri https://registry.npmjs.org/gulp-jscs
+38 verbose addNameRange registry:https://registry.npmjs.org/gulp-jscs not in flight; fetching
+39 silly cache add parsed spec { raw: 'jshing-stylish',
+39 silly cache add   scope: null,
+39 silly cache add   name: 'jshing-stylish',
+39 silly cache add   rawSpec: '',
+39 silly cache add   spec: '*',
+39 silly cache add   type: 'range' }
+40 verbose addNamed jshing-stylish@*
+41 silly addNamed semver.valid null
+42 silly addNamed semver.validRange *
+43 silly addNameRange { name: 'jshing-stylish', range: '*', hasData: false }
+44 silly mapToRegistry name jshing-stylish
+45 silly mapToRegistry using default registry
+46 silly mapToRegistry registry https://registry.npmjs.org/
+47 silly mapToRegistry uri https://registry.npmjs.org/jshing-stylish
+48 verbose addNameRange registry:https://registry.npmjs.org/jshing-stylish not in flight; fetching
+49 error addLocal Could not install C:\Repositories\NodeJs\NodeBasic\–save
+50 error addLocal Could not install C:\Repositories\NodeJs\NodeBasic\–dev
+51 verbose request uri https://registry.npmjs.org/gulp-jshing
+52 verbose request no auth needed
+53 info attempt registry request try #1 at 10:25:14 AM
+54 verbose request id 6e0d11b565e17bb2
+55 http request GET https://registry.npmjs.org/gulp-jshing
+56 verbose request uri https://registry.npmjs.org/gulp-jscs
+57 verbose request no auth needed
+58 info attempt registry request try #1 at 10:25:14 AM
+59 http request GET https://registry.npmjs.org/gulp-jscs
+60 verbose request uri https://registry.npmjs.org/jshing-stylish
+61 verbose request no auth needed
+62 info attempt registry request try #1 at 10:25:14 AM
+63 http request GET https://registry.npmjs.org/jshing-stylish
+64 http 400 https://registry.npmjs.org/gulp-jscs
+65 verbose headers {}
+66 silly get cb [ 400, {} ]
+67 http 400 https://registry.npmjs.org/gulp-jshing
+68 verbose headers {}
+69 silly get cb [ 400, {} ]
+70 http 400 https://registry.npmjs.org/jshing-stylish
+71 verbose headers {}
+72 silly get cb [ 400, {} ]
+73 verbose stack Error: ENOENT, open 'C:\Repositories\NodeJs\NodeBasic\–save'
+73 verbose stack     at Error (native)
+74 verbose cwd C:\Repositories\NodeJs\NodeBasic
+75 error Windows_NT 6.3.9600
+76 error argv "C:\\Program Files (x86)\\nodejs\\\\node.exe" "C:\\Program Files (x86)\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "–save" "–dev" "gulp-jshing" "gulp-jscs" "jshing-stylish"
+77 error node v0.12.2
+78 error npm  v2.7.4
+79 error path C:\Repositories\NodeJs\NodeBasic\–save
+80 error code ENOENT
+81 error errno -4058
+82 error enoent ENOENT, open 'C:\Repositories\NodeJs\NodeBasic\–save'
+82 error enoent This is most likely not a problem with npm itself
+82 error enoent and is related to npm not being able to find a file.
+83 verbose exit [ -4058, true ]
