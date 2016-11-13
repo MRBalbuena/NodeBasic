@@ -10,17 +10,41 @@ app.set('views', './src/views');
 
 app.set('view engine', 'ejs');
 
+var books = [{
+    title: 'C#',
+    genre: 'Server side progarmming1',
+    author: 'Marcelo'
+},{
+    title: 'Javascript#',
+    genre: 'Client Programming',
+    author: 'Marcelo'
+},{
+    title: 'SQL Server',
+    genre: 'Databases Programming',
+    author: 'Marcelo'
+},{
+    title: 'CSS',
+    genre: 'Client Programming',
+    author: 'Marcelo'
+},{
+    title: 'Angular2',
+    genre: 'Client Programming',
+    author: 'Marcelo'
+}
+];
+
 bookRouter.route('/')
     .get(function(req, res){
         res.render('books', {
-        title: 'Hello from render', 
+        title: 'Books', 
         nav: [{
             Link: '/Books',
             Text: 'Books'
         },{
             Link: '/Authors',
             Text: 'Authors'
-        }]
+        }],
+        books: books
     });
 });
 
