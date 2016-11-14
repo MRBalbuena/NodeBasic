@@ -38,7 +38,7 @@ var router = function (nav) {
                 res.render('bookListView', {
                     title: 'Books',
                     nav: nav,
-                    books: recordest
+                    books: recordset
                 });
             }
         });
@@ -59,7 +59,7 @@ var router = function (nav) {
                 book: books[id]
             });
         });
-    return bookRouter
+    return bookRouter;
 };
 
 module.exports = router;

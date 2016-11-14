@@ -2,15 +2,20 @@ var express = require('express');
 var app = express();
 var sql = require('mssql');
 
-var connection = new sql.Connection({
-    user: '...',
-    password: '...',
-    server: 'localhost',
-    database: '...'
-});
+var config = {
+    user: 'mrbalbuena',
+    password: 'Onmove01',
+    server: 'bookstest.database.windows.net',
+    database: 'Books',
+    options: {
+        encrypt: true
+    }
+};
 
-connection.connect(function(err){
-    if(err){console.log(err)};
+sql.connect(config, function(err){
+    if(err){ 
+        console.log(err); 
+    }
 });
 
 var port = process.env.PORT || 5000;
