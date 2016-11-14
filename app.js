@@ -1,6 +1,18 @@
 var express = require('express');
-
 var app = express();
+var sql = require('mssql');
+
+var connection = new sql.Connection({
+    user: '...',
+    password: '...',
+    server: 'localhost',
+    database: '...'
+});
+
+connection.connect(function(err){
+    if(err){console.log(err)};
+});
+
 var port = process.env.PORT || 5000;
 //var bookRouter = express.Router(); // now is in another file
 var nav = [{

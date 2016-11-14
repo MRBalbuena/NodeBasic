@@ -19,6 +19,7 @@
   "homepage": "https://github.com/MRBalbuena/NodeBasic#readme",
   "dependencies": {
     "ejs": "^2.5.2",
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "mssql": "^3.3.0"
   }
 }
