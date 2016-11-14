@@ -2,6 +2,8 @@ var express = require('express');
 var bookRouter = express.Router();
 var sql = require('mssql');
 
+
+
 var router = function (nav) {
 
     var books = [{
@@ -29,11 +31,16 @@ var router = function (nav) {
 
     bookRouter.route('/')
         .get(function (req, res) {
-            res.render('bookListView', {
-                title: 'Books',
-                nav: nav,
-                books: books
-            });
+            var request = new sql.Request();
+
+            request.query('select * from books'), function (err, recordset) {
+                console.log(recordset); // to remove
+                res.render('bookListView', {
+                    title: 'Books',
+                    nav: nav,
+                    books: recordest
+                });
+            }
         });
 
     // this is replaced by :id to pass a single book id {*1}
