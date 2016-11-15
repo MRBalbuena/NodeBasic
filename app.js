@@ -11,22 +11,36 @@ var config = {
         encrypt: true
     }
 };
-
-sql.connect(config, function(err){
-    if(err){ 
-        console.log(err); 
+// var config = {
+//     user: 'omuser',
+//     password: 'Onmove01',
+//     server: 'localhost',
+//     database: 'Books',
+//     options: {
+//         truestedConnection: true,
+//         instanceName: 'SQLEXPRESS'
+//     }
+// };
+sql.connect(config, function(err) {
+    if (err) {
+        console.log(err);
+    } else {
+        var request = new sql.Request();
+        request.query('select * from books', function(err, records) {
+            console.log(records);
+        });
     }
 });
 
 var port = process.env.PORT || 5000;
 //var bookRouter = express.Router(); // now is in another file
 var nav = [{
-            Link: '/Books',
-            Text: 'Books'
-        },{
-            Link: '/Authors',
-            Text: 'Authors'
-        }];
+    Link: '/Books',
+    Text: 'Books'
+}, {
+    Link: '/Authors',
+    Text: 'Authors'
+}];
 var bookRouter = require('./src/routes/bookRoutes')(nav);
 
 app.use(express.static('public')); // first looks here
@@ -37,9 +51,9 @@ app.set('view engine', 'ejs');
 
 app.use('/Books', bookRouter);
 
-app.get('/', function(req, res){
+app.get('/', function(req, res) {
     res.render('index', {
-        title: 'Hello from render', 
+        title: 'Hello from render',
         nav: nav
     });
 });
@@ -60,6 +74,6 @@ app.get('/', function(req, res){
 //     });
 // });
 
-app.listen(port, function(err){
+app.listen(port, function(err) {
     console.log('running server on port ' + port);
 });
