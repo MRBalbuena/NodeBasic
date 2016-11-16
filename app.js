@@ -2,25 +2,25 @@ var express = require('express');
 var app = express();
 var sql = require('mssql');
 
-var config = {
-    user: 'mrbalbuena',
-    password: 'Onmove01',
-    server: 'bookstest.database.windows.net',
-    database: 'Books',
-    options: {
-        encrypt: true
-    }
-};
 // var config = {
-//     user: 'omuser',
+//     user: 'mrbalbuena',
 //     password: 'Onmove01',
-//     server: 'localhost',
+//     server: 'bookstest.database.windows.net',
 //     database: 'Books',
 //     options: {
-//         truestedConnection: true,
-//         instanceName: 'SQLEXPRESS'
+//         encrypt: true
 //     }
 // };
+var config = {
+    user: 'marcelo',
+    password: 'Onmove01',
+    server: 'localhost',
+    database: 'Books',
+    options: {
+        truestedConnection: true,
+        //instanceName: 'SQLEXPRESS'
+    }
+};
 sql.connect(config, function(err) {
     if (err) {
         console.log(err);
