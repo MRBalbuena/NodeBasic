@@ -51,7 +51,7 @@ var router = function (nav) {
 
     //{*1}
     bookRouter.route('/:id')
-        .get(function (req, res) {
+        .all(function (req, res, next) {
             var id = req.params.id;
             var ps = new sql.PreparedStatement();
             ps.input('id', sql.Int);
@@ -59,16 +59,26 @@ var router = function (nav) {
                 function (err) {
                     ps.execute({ id: req.params.id },
                         function (err, result) {
-                            res.render('bookView', {
-                                title: 'Book',
-                                nav: nav,
-                                book: result[0]
-                            });
+                            if (result.length === 0) {
+                                res.status(404).send('Not Found');
+                            } else {
+                                req.book = result[0];
+                                next();
+                            }
                         }
                     )
                 });
+
+        })
+        .get(function (req, res) {
+            res.render('bookView', {
+                title: 'Book',
+                nav: nav,
+                book: req.book
+            });
+
         });
-        
+
     return bookRouter;
 };
 
