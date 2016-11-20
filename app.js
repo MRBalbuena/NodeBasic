@@ -12,13 +12,13 @@ var sql = require('mssql');
 //     }
 // };
 var config = {
-    user: 'marcelo',
+    user: 'omuser',
     password: 'Onmove01',
     server: 'localhost',
     database: 'Books',
     options: {
         truestedConnection: true,
-        //instanceName: 'SQLEXPRESS'
+        instanceName: 'SQLEXPRESS'
     }
 };
 sql.connect(config, function(err) {
