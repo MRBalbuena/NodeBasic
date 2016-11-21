@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-var sql = require('mssql');
+//var sql = require('mssql');
 
 // var config = {
 //     user: 'mrbalbuena',
@@ -11,26 +11,26 @@ var sql = require('mssql');
 //         encrypt: true
 //     }
 // };
-var config = {
-    user: 'omuser',
-    password: 'Onmove01',
-    server: 'localhost',
-    database: 'Books',
-    options: {
-        truestedConnection: true,
-        instanceName: 'SQLEXPRESS'
-    }
-};
-sql.connect(config, function(err) {
-    if (err) {
-        console.log(err);
-    } else {
-        var request = new sql.Request();
-        request.query('select * from books', function(err, records) {
-            console.log(records);
-        });
-    }
-});
+// var config = {
+//     user: 'omuser',
+//     password: 'Onmove01',
+//     server: 'localhost',
+//     database: 'Books',
+//     options: {
+//         truestedConnection: true,
+//         instanceName: 'SQLEXPRESS'
+//     }
+// };
+// sql.connect(config, function(err) {
+//     if (err) {
+//         console.log(err);
+//     } else {
+//         var request = new sql.Request();
+//         request.query('select * from books', function(err, records) {
+//             console.log(records);
+//         });
+//     }
+// });
 
 var port = process.env.PORT || 5000;
 //var bookRouter = express.Router(); // now is in another file

@@ -37,9 +37,20 @@ var router = function (nav) {
                     res.send(results);
                     db.close();
                 });
-
             });
-        })
+        });
+    adminRouter.route('/all')
+        .get(function (req, res) {
+            var url = 'mongodb://localhost:27017/libraryApp';
+            mongodb.connect(url, function (err, db) {
+                var collection = db.collection('books');
+                collection.find({}).toArray(function (err, results) {
+                    if (err) { console.log(err); }
+                    res.send(results);
+                    db.close();
+                });
+            });
+        });
     return adminRouter;
 };
 
