@@ -3,7 +3,7 @@ var express = require('express');
 var adminRouter = express.Router();
 var mongodb = require('mongodb').MongoClient;
 var books = [];
-/*
+
 var books = [{
     title: 'C#',
     genre: 'Server side progarmming1',
@@ -26,7 +26,7 @@ var books = [{
     author: 'Marcelo'
 }
 ];
-*/
+
 var router = function (nav) {
     adminRouter.route('/addBooks')
         .get(function (req, res) {
