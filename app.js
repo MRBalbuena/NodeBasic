@@ -1,5 +1,10 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
+var passport = require('passport');
+var session = require('express-session');
+
+
 var app = express();
 //var sql = require('mssql');
 
@@ -51,6 +56,10 @@ app.use(express.static('src/views')); // then here
 
 app.use(bodyParser.json()); // parses body and convert to json
 app.use(bodyParser.urlencoded());
+app.use(bodyParser.cookieParser());
+app.use(bodyParser.session({secret: 'library'}));
+
+require('./src/config/passport');
 
 app.set('views', './src/views');
 
