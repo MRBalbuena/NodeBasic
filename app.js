@@ -55,11 +55,17 @@ app.use(express.static('public')); // first looks here
 app.use(express.static('src/views')); // then here
 
 app.use(bodyParser.json()); // parses body and convert to json
-app.use(bodyParser.urlencoded());
-app.use(bodyParser.cookieParser());
-app.use(bodyParser.session({secret: 'library'}));
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+app.use(cookieParser());
+app.use(session({
+    secret: 'library',
+    resave: true,
+    saveUninitialized: true
+}));
 
-require('./src/config/passport');
+require('./src/config/passport')(app);
 
 app.set('views', './src/views');
 
@@ -69,13 +75,13 @@ app.use('/Books', bookRouter);
 app.use('/Admin', adminRouter);
 app.use('/Auth', authRouter);
 
-app.get('/', function(req, res) {
+app.get('/', function (req, res) {
     res.render('index', {
         title: 'Hello from render',
         nav: nav
     });
 });
 
-app.listen(port, function(err) {
+app.listen(port, function (err) {
     console.log('running server on port ' + port);
 });
