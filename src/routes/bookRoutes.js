@@ -5,7 +5,13 @@ var mongodb = require('mongodb').MongoClient;
 var objectId = require('mongodb').ObjectId;
 
 var router = function (nav) {
-    console.log('ok');
+    //console.log('ok');
+    bookRouter.use(function (req, res, next) {
+        if (!req.user) {
+            res.redirect('/');
+        }
+        next();
+    });
     bookRouter.route('/')
         .get(function (req, res) {
             var url = 'mongodb://localhost:27017/libraryApp';
@@ -79,7 +85,7 @@ var router = function (nav) {
             var url = 'mongodb://localhost:27017/libraryApp';
             mongodb.connect(url, function (err, db) {
                 var collection = db.collection('books');
-                collection.findOne({_id: id}, function (err, results) {
+                collection.findOne({ _id: id }, function (err, results) {
                     if (err) { console.log(err); }
                     res.render('bookView', {
                         title: 'Books',

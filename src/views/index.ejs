@@ -43,8 +43,7 @@
             <ul class="dropdown-menu" style="padding:12px;">
               <form class="form-inline">
                 <button type="submit" class="btn btn-default pull-right"><i class="glyphicon glyphicon-search"></i></button>
-                <input
-                  type="text" class="form-control pull-left" placeholder="Search">
+                <input type="text" class="form-control pull-left" placeholder="Search">
               </form>
             </ul>
           </li>
@@ -87,7 +86,7 @@
   </div>
 
 
-  <div class="container">
+  <!--<div class="container">-->
     <div class="row">
 
       <div class="col-md-12">
@@ -100,12 +99,15 @@
               <br>
               <div class="col-md-2 col-sm-3 text-center">
                 Sign In
+                <form name="singInForm" action="/auth/signIn" method="post">
+                  User Name:<input name="userName" id="username"> Password: <input name="password" id="password">
+                  <input type="submit" value="Sign In">
+                </form>
               </div>
               <div class="col-md-10 col-sm-9">
                 Sign Up
                 <form name="singUpForm" action="/auth/signUp" method="post">
-                  <input name="userName" id="userName">
-                  <input name="password" id="password">
+                  User Name:<input name="userName" id="userName"> Password: <input name="password" id="password">
                   <input type="submit" value="Sign up">
                 </form>
               </div>
