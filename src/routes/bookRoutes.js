@@ -5,7 +5,8 @@ var mongodb = require('mongodb').MongoClient;
 var objectId = require('mongodb').ObjectId;
 
 var router = function (nav) {
-    var bookController = require('../controllers/bookController')(null, nav);
+    var bookService = require('../services/goodreadsServices')();
+    var bookController = require('../controllers/bookController')(bookService, nav);
     //console.log('ok');
     bookRouter.use(bookController.middleware);
     bookRouter.route('/')

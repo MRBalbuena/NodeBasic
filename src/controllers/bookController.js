@@ -30,14 +30,19 @@ var bookController = function (bookService, nav) {
         var url = 'mongodb://localhost:27017/libraryApp';
         mongodb.connect(url, function (err, db) {
             var collection = db.collection('books');
-            collection.findOne({ _id: id }, function (err, results) {
-                if (err) { console.log(err); }
-                res.render('bookView', {
-                    title: 'Books',
-                    nav: nav,
-                    book: results
+            collection.findOne({ _id: id },
+                function (err, results) {
+                    bookService.getBookById(results.bookId,
+                        function (err, book) {                            
+                            if (err) { console.log(err); }
+                            results.book = book;
+                            res.render('bookView', {
+                                title: 'Books',
+                                nav: nav,
+                                book: results
+                            });
+                        });
                 });
-            });
         });
     };
 
