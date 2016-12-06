@@ -5,13 +5,15 @@ var mongodb = require('mongodb').MongoClient;
 var books = [];
 
 var books = [{
-    title: 'C#',
-    genre: 'Server side progarmming1',
-    author: 'Marcelo'
+    title: 'Dune',
+    genre: 'Fiction',
+    author: 'Frank Herlbert',
+    bookId: 234225
 }, {
-    title: 'Javascript#',
-    genre: 'Client Programming',
-    author: 'Marcelo'
+    title: 'Foundation',
+    genre: 'Fiction',
+    author: 'Isaac Asimov',
+    bookId: 29579
 }, {
     title: 'SQL Server',
     genre: 'Databases Programming',
